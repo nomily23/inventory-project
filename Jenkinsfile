@@ -1,4 +1,4 @@
-Declerative pipeline{
+ pipeline{
     agent any
     stages{
         stage("1. build images"){
