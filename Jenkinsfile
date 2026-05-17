@@ -3,8 +3,8 @@
     stages{
         stage("1. build images"){
             steps{
-               bat "docker build -t image-frontend ./frontend:${BUILD_NUMBER}" 
-                bat "docker build -t image-backend ./backend:${BUILD_NUMBER}"
+               bat "docker build -t image-frontend:v${env.BUILD_NUMBER} ./frontend" 
+                bat "docker build -t image-backend:v${env.BUILD_NUMBER}  ./backend"
             }
             post{
                 always{
