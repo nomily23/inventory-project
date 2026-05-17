@@ -18,8 +18,7 @@ Declerative pipeline{
                 }
             }
         }
-    }
-    stage{
+    
         stage("2. load image to minikube"){
              steps{
                 sh "minikube image load image-frontend:${BUILD_NUMBER}"
@@ -38,8 +37,7 @@ Declerative pipeline{
                 }
             }
         }
-    }
-    stage{
+    
         stage("3. update deployments and rollout"){
             steps{
                 sh "kubectl set image deployment/inventory-frontend-app frontend-app=image-frontend:${BUILD_NUMBER}"
